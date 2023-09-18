@@ -144,6 +144,52 @@ void pattern14(int n) {
   }
 }
 
+void pattern15(int n) { 
+  for(int i = 0; i < n; i++) {
+    for(char ch = 'A'; ch <= 'A' + (n - 1 - i); ch++) {
+      cout << ch << ' ';
+    }
+    cout << '\n';
+  }
+}
+
+void pattern16(int n) { 
+  for(int i = 0; i < n; i++) {
+    for(int j = 0; j <= i; j++) {
+      cout << (char) ('A' + i);
+    }
+    cout << '\n';
+  }
+}
+
+void pattern17(int n) { 
+  for(int i = 0; i < n; i++) {
+    for(int j = 0; j < n - i - 1; j++) {
+      cout << ' ';
+    }
+    for(char ch = 'A'; ch <= 'A' + i; ch++) {
+      cout << ch;
+    }
+    for(char ch = 'A' + i - 1; ch >= 'A'; ch--) {
+      cout << ch;
+    }
+    for(int j = 0; j < n - i - 1; j++) {
+      cout << ' ';
+    }
+    cout << '\n';
+  }
+}
+
+void pattern18(int n) { 
+  for(int i = 0; i < n; i++) {
+    char ch = 'A' + (n - i - 1);
+    for(int j = 0; j <= i; j++, ch++) {
+      cout << ch << ' ';
+    }
+    cout << '\n';
+  }
+}
+
 int main() {
   freopen("input.txt", "r", stdin);
   freopen("output.txt", "w", stdout);
@@ -153,7 +199,7 @@ int main() {
   while (t--) {
     int n;
     cin >> n;
-    pattern14(n);
+    pattern18(n);
     cout << '\n';
   }
 
