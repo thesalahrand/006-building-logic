@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void printNameNTimes(int n, int cnt = 0) {
+  if(cnt == n) return;
+  cout << "Mohammad Salah\n";
+  printNameNTimes(n, cnt + 1);
+}
+
+void print1ToN(int n, int cur_n = 1) {
+  if(n < cur_n) return;
+  cout << cur_n << ' ';
+  print1ToN(n, ++cur_n);
+}
+
+void printNTo1(int n) {
+  if(!n) return;
+  cout << n << ' ';
+  printNTo1(--n);
+}
+
+void print1ToNByBacktracking(int n) {
+  if(!n) return;
+  print1ToNByBacktracking(n - 1);
+  cout << n << ' ';
+}
+
+void printNTo1ByBacktracking(int n, int cur_n = 1) {
+  if(cur_n > n) return;
+  printNTo1ByBacktracking(n, cur_n + 1);
+  cout << cur_n << ' ';
+}
+
+int main() {
+  freopen("input.txt", "r", stdin);
+  freopen("output.txt", "w", stdout);
+
+  int n;
+  cin >> n;
+  printNTo1ByBacktracking(n);
+
+  return 0;
+}
