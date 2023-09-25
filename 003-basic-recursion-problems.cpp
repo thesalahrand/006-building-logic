@@ -65,6 +65,23 @@ int factorialOfN(int n)
   return n * factorialOfN(n - 1);
 }
 
+int *reverseArr(int arr[], int n, int l)
+{
+  if (l >= n / 2)
+    return arr;
+  swap(arr[l], arr[n - 1 - l]);
+  return reverseArr(arr, n, l + 1);
+}
+
+bool isStrPalindrome(string s, int n, int l)
+{
+  if (l >= n / 2)
+    return true;
+  if (s[l] != s[n - 1 - l])
+    return false;
+  return isStrPalindrome(s, n, l + 1);
+}
+
 int main()
 {
   freopen("input.txt", "r", stdin);
@@ -75,8 +92,10 @@ int main()
   while (t--)
   {
     int n;
-    cin >> n;
-    cout << factorialOfN(n) << '\n';
+    string s;
+    cin >> n >> s;
+    cout << isStrPalindrome(s, n, 0) ? "YES" : "NO";
+    cout << '\n';
   }
 
   return 0;
