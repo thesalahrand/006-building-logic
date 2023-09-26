@@ -82,6 +82,15 @@ bool isStrPalindrome(string s, int n, int l)
   return isStrPalindrome(s, n, l + 1);
 }
 
+int getNthFibonacciNumber(int n)
+{
+  if (n == 1)
+    return 0;
+  else if (n == 2)
+    return 1;
+  return getNthFibonacciNumber(n - 1) + getNthFibonacciNumber(n - 2);
+}
+
 int main()
 {
   freopen("input.txt", "r", stdin);
@@ -92,9 +101,8 @@ int main()
   while (t--)
   {
     int n;
-    string s;
-    cin >> n >> s;
-    cout << isStrPalindrome(s, n, 0) ? "YES" : "NO";
+    cin >> n;
+    cout << getNthFibonacciNumber(n);
     cout << '\n';
   }
 
