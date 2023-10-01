@@ -19,9 +19,7 @@ int getPartitionIdx(vector<int> &v, int l, int r)
   }
   swap(v[l], v[j]);
 
-  return j
-
-      ;
+  return j;
 }
 
 void quickSort(vector<int> &v, int l, int r)
